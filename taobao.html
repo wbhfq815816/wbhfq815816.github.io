@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -238px;
+            margin-top: -150px;
+            width: 476px;
+            height: 36px;
+            border-radius: 20px;
+        }
+
+        .search {
+            width: 476px;
+            height: 36px;
+        }
+
+        input {
+            display: inline-block;
+            height: 32px;
+            width: 400px;
+            line-height: 36px;
+            outline: none;
+            text-indent: 10px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border: 1px solid red;
+
+        }
+
+        .btn {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 36px;
+            width: 76px;
+            background: red;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border: none;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            line-height: 36px;
+            text-align: center;
+            overflow: hidden;
+            transition: .5s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        ul {
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            width: 400px;
+            display: none;
+        }
+
+        li {
+            margin-top: 10px;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="search">
+            <input type="text">
+        </div>
+        <button class="btn">搜索</button>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+
+    <script>
+        var oInput = document.getElementsByTagName('input')[0];
+        var oUl = document.getElementsByTagName('ul')[0];
+        console.log(oUl);
+
+        oInput.oninput = function () {
+            var val = oInput.value;
+            var oScript = document.createElement('script');
+
+            oScript.src = 'https://suggest.taobao.com/sug?q=' + val + '&callback=cb';
+            document.body.appendChild(oScript);
+        }
+
+        function cb(data) {
+            console.log(data);
+            var str = '';
+            if (data.result.length > 0) {
+                oUl.style.display = 'block';
+                data.result.forEach(function(ele, index) {
+                    str += '<li>' + ele[0] + '</li>'
+                });
+                oUl.innerHTML = str;
+            } else {
+                oUl.style.display = 'none';
+            }
+        }
+        
+        
+    </script>
+</body>
+
+</html>
