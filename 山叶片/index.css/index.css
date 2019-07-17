@@ -1,0 +1,118 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height: 100%;
+    display: flex;
+    /* 水平居中 */
+    justify-content: center;
+    /* 垂直居中 */
+    align-items: center;
+
+    /* 过渡是时间 */
+    transition: 0.5s;
+    /* 延迟时间 */
+    transition-delay: 0.3s;
+}
+main{
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+div{
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 150px;
+    color: rgba(255, 255, 255, 0.9);
+    /* float: left;
+    margin: 20px; */
+    position: absolute;
+
+    transition: 0.5s;
+}
+
+.one:hover, .two:hover{
+    box-shadow: 0 0 10px rgb(102, 98, 98);
+    transform: translateY(-10px)
+}
+.three:hover, .four:hover{
+    box-shadow: 0 0 10px rgb(102, 98, 98);
+    transform: translateY(10px);
+}
+
+.one{
+    left: 45px;
+    top: 45px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: rgba(238, 10, 10, 0.6);
+}
+
+.ones{
+    left: 0;
+    top: 0;
+    text-shadow: 5px 5px 5px rgb(56, 55, 55);
+    background: rgba(238, 10, 10, 0.98);
+}
+
+
+.two{
+    right: 45px;
+    top: 45px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: rgba(252, 235, 3, 0.86);
+}
+
+.twos{
+    right: 0;
+    top: 0;
+    text-shadow: -5px 5px 5px rgb(56, 55, 55);
+    background: rgba(252, 235, 3, 0.87);
+}
+
+.three{
+    left: 45px;
+    bottom: 45px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background: rgba(149, 247, 3, 0.87);
+}
+.threes{
+    left: 0;
+    bottom: 0;
+    text-shadow: 5px -5px 5px rgb(56, 55, 55);
+    background: rgba(149, 247, 3, 0.87);
+}
+.four{
+    right: 45px;
+    bottom: 45px;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background: rgba(5, 190, 247, 0.85);
+}
+
+.fours{
+    right: 0;
+    bottom: 0;
+    text-shadow: -5px -5px 5px rgb(56, 55, 55);
+    background: rgba(5, 190, 247, 0.85);
+}
+
+.ones,.twos,.threes,.fours{
+    border: 3px solid #fff;
+    color: white;
+    border-radius: 80%;
+}
+
+
+
+
+
+

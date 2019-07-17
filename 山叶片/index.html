@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css/index.css">
+</head>
+
+<body>
+    <main>
+        <div class="one">医疗</div>
+        <div class="two">饮食</div>
+        <div class="three">运动</div>
+        <div class="four">消费</div>
+    </main>
+    <script src="./index.js/jquery-1.8.2.min.js"></script>
+    <script>
+        // console.log(jQuery);
+        // console.log($===jQuery);
+
+        $('.one').click(function () {
+            if ($(this).attr("class") == 'one') {
+                $(this).attr('class', 'ones')
+                $('body').css({
+                    background: 'rgba(247,114,114,0.98)'
+                });
+            }else{
+                $(this).attr('class', 'one');
+                $('body').css({
+                    background: 'none'
+                });
+            }
+        })
+
+        $('.two').click(function () {
+            if ($(this).attr("class") == 'two') {
+                $(this).attr('class', 'twos')
+                $('body').css({
+                    background: 'rgba(245,245,129)'
+                });
+            }else{
+                $(this).attr('class', 'two');
+                $('body').css({
+                    background: 'none'
+                });
+            }
+        })
+
+        $('.three').click(function () {
+            if ($(this).attr("class") == 'three') {
+                $(this).attr('class', 'threes')
+                $('body').css({
+                    background: 'rgba(193,245,115)'
+                });
+            }else{
+                $(this).attr('class', 'three');
+                $('body').css({
+                    background: 'none'
+                });
+            }
+        })
+
+        $('.four').click(function () {
+            if ($(this).attr("class") == 'four') {
+                $(this).attr('class', 'fours')
+                $('body').css({
+                    background: 'rgba(133,219,245)'
+                });
+            }else{
+                $(this).attr('class', 'four');
+                $('body').css({
+                    background: 'none'
+                });
+            }
+        })
+        
+    </script>
+</body>
+
+</html>
